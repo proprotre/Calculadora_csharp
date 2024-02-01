@@ -88,69 +88,81 @@ namespace Calculadora
 
         private void btnSubtrair_Click(object sender, EventArgs e)
         {
-            if(OperacaoSelecionada == Operacao.Nenhuma)
+            if (txtResultado.Text != "")
             {
-                OperacaoSelecionada = Operacao.Subtrair;
-                Valor = Convert.ToDecimal(txtResultado.Text);
-                txtResultado.Text = "";
-                lbOperacao.Text = "-";
-            }
-            else
-            {
-                OperacaoSelecionada = Operacao.Subtrair;
-                txtResultado.Text = "";
-                lbOperacao.Text = "-";
+                if (OperacaoSelecionada == Operacao.Nenhuma)
+                {
+                    OperacaoSelecionada = Operacao.Subtrair;
+                    Valor = Convert.ToDecimal(txtResultado.Text);
+                    txtResultado.Text = "";
+                    lbOperacao.Text = "-";
+                }
+                else
+                {
+                    OperacaoSelecionada = Operacao.Subtrair;
+                    txtResultado.Text = "";
+                    lbOperacao.Text = "-";
+                }
             }
         }
 
         private void btnSomar_Click(object sender, EventArgs e)
         {
-            if (OperacaoSelecionada == Operacao.Nenhuma)
+            if (txtResultado.Text != "")
             {
-                OperacaoSelecionada = Operacao.Somar;
-                Valor = Convert.ToDecimal(txtResultado.Text);
-                txtResultado.Text = "";
-                lbOperacao.Text = "+";
-            }
-            else
-            {
-                OperacaoSelecionada = Operacao.Somar;
-                txtResultado.Text = "";
-                lbOperacao.Text = "+";
+                if (OperacaoSelecionada == Operacao.Nenhuma)
+                {
+                    OperacaoSelecionada = Operacao.Somar;
+                    Valor = Convert.ToDecimal(txtResultado.Text);
+                    txtResultado.Text = "";
+                    lbOperacao.Text = "+";
+                }
+                else
+                {
+                    OperacaoSelecionada = Operacao.Somar;
+                    txtResultado.Text = "";
+                    lbOperacao.Text = "+";
+                }
             }
         }
 
         private void btnMultiplicar_Click(object sender, EventArgs e)
         {
-            if (OperacaoSelecionada == Operacao.Nenhuma)
+            if (txtResultado.Text != "")
             {
-                OperacaoSelecionada = Operacao.Multiplicar;
-                Valor = Convert.ToDecimal(txtResultado.Text);
-                txtResultado.Text = "";
-                lbOperacao.Text = "x";
-            }
-            else
-            {
-                OperacaoSelecionada = Operacao.Multiplicar;
-                txtResultado.Text = "";
-                lbOperacao.Text = "x";
+                if (OperacaoSelecionada == Operacao.Nenhuma)
+                {
+                    OperacaoSelecionada = Operacao.Multiplicar;
+                    Valor = Convert.ToDecimal(txtResultado.Text);
+                    txtResultado.Text = "";
+                    lbOperacao.Text = "x";
+                }
+                else
+                {
+                    OperacaoSelecionada = Operacao.Multiplicar;
+                    txtResultado.Text = "";
+                    lbOperacao.Text = "x";
+                }
             }
         }
 
         private void btnDividir_Click(object sender, EventArgs e)
         {
-            if (OperacaoSelecionada == Operacao.Nenhuma)
+            if (txtResultado.Text != "")
             {
-                OperacaoSelecionada = Operacao.Dividir;
-                Valor = Convert.ToDecimal(txtResultado.Text);
-                txtResultado.Text = "";
-                lbOperacao.Text = "/";
-            }
-            else
-            {
-                OperacaoSelecionada = Operacao.Dividir;
-                txtResultado.Text = "";
-                lbOperacao.Text = "/";
+                if (OperacaoSelecionada == Operacao.Nenhuma)
+                {
+                    OperacaoSelecionada = Operacao.Dividir;
+                    Valor = Convert.ToDecimal(txtResultado.Text);
+                    txtResultado.Text = "";
+                    lbOperacao.Text = "/";
+                }
+                else
+                {
+                    OperacaoSelecionada = Operacao.Dividir;
+                    txtResultado.Text = "";
+                    lbOperacao.Text = "/";
+                }
             }
         }
 
@@ -158,24 +170,27 @@ namespace Calculadora
         {
             try
             {
-                switch (OperacaoSelecionada)
+                if (txtResultado.Text != "")
                 {
-                    case Operacao.Somar:
-                        Resultado = Valor + Convert.ToDecimal(txtResultado.Text);
-                        break;
-                    case Operacao.Subtrair:
-                        Resultado = Valor - Convert.ToDecimal(txtResultado.Text);
-                        break;
-                    case Operacao.Multiplicar:
-                        Resultado = Valor * Convert.ToDecimal(txtResultado.Text);
-                        break;
-                    case Operacao.Dividir:
-                        Resultado = Valor / Convert.ToDecimal(txtResultado.Text);
-                        break;
+                    switch (OperacaoSelecionada)
+                    {
+                        case Operacao.Somar:
+                            Resultado = Valor + Convert.ToDecimal(txtResultado.Text);
+                            break;
+                        case Operacao.Subtrair:
+                            Resultado = Valor - Convert.ToDecimal(txtResultado.Text);
+                            break;
+                        case Operacao.Multiplicar:
+                            Resultado = Valor * Convert.ToDecimal(txtResultado.Text);
+                            break;
+                        case Operacao.Dividir:
+                            Resultado = Valor / Convert.ToDecimal(txtResultado.Text);
+                            break;
+                    }
+                    txtResultado.Text = Convert.ToString(Resultado);
+                    lbOperacao.Text = "=";
+                    OperacaoSelecionada = Operacao.Nenhuma;
                 }
-                txtResultado.Text = Convert.ToString(Resultado);
-                lbOperacao.Text = "=";
-                OperacaoSelecionada = Operacao.Nenhuma;
             }
             catch (System.FormatException)
             {
