@@ -1,5 +1,8 @@
 # Calculadora C# c/ interface gráfica
 Desenvolvido em C# e Windows Form
 
+!(/calculadora.png "calculadora")
+
+
 ## Caminho do executável
-"Calculadora_csharp/Calculadora_csharp/Calculadora/bin/Debug/net6.0-windows/Calculadora.exe"
+"Calculadora/bin/Debug/net6.0-windows/Calculadora.exe"
