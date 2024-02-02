@@ -1,7 +1,7 @@
 # Calculadora C# c/ interface gráfica
 Desenvolvido em C# e Windows Form
 
-!(/calculadora.png "calculadora")
+![image](/calculadora.png "calculadora")
 
 
 ## Caminho do executável
