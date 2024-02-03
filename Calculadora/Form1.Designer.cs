@@ -172,7 +172,7 @@
             // 
             // btnVirgula
             // 
-            btnVirgula.Location = new Point(89, 409);
+            btnVirgula.Location = new Point(90, 412);
             btnVirgula.Margin = new Padding(3, 4, 3, 4);
             btnVirgula.Name = "btnVirgula";
             btnVirgula.Size = new Size(69, 80);
