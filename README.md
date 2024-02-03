@@ -6,3 +6,6 @@ Desenvolvido em C# e Windows Form
 
 ## Caminho do executável
 "Calculadora/bin/Debug/net6.0-windows/Calculadora.exe"
+
+## Autor
+Gabriel Badaró
